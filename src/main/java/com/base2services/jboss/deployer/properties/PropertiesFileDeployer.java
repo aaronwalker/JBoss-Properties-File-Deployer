@@ -31,9 +31,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 
 import javax.management.MBeanServer;
 import javax.management.MalformedObjectNameException;
@@ -202,7 +206,37 @@ public class PropertiesFileDeployer extends SubDeployerSupport implements SubDep
      */
     public void destroy(DeploymentInfo di)
     {}
+    
+    public String displayAll()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append("<table border='1'>\n");
+        Properties props = System.getProperties();
+        sb.append("<tr><th>Key</th><th>Value</th></tr>\n");
+        List<String> sortedKeys = sortPropertyKey(props.keySet());
+        
+        for(String o: sortedKeys)
+        {
+            String key = o.toString();
+            sb.append("<tr>");
+            sb.append("<td>" + key + "</td>");
+            sb.append("<td>" + System.getProperty(key) + "</td>");
+            sb.append("</tr>\n");
+        }
+        sb.append("</table>");
+        return sb.toString(); 
+    }
 
+    private List<String> sortPropertyKey(Set<Object> keySet)
+    {
+        List<String> list = new ArrayList<String>();
+        for(Object o: keySet)
+        {
+            list.add((String)o);
+        }
+        Collections.sort(list);
+        return list;
+    }
     /**
      * The startService method gets the mbeanProxies for MainDeployer and ServiceController, used elsewhere.
      * 

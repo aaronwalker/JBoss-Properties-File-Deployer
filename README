@@ -1,0 +1,21 @@
+h1. JBoss 4.2.x Properties File Deployer
+
+A simple jboss deployer that hot deploys java properties files into the System properties by simply copy a properties into the jboss deploy directory
+
+h2. How to use?
+
+ * build the deployer using mvn clean install
+ 
+ * copy the target/properties-file-deployer.sar into the jboss deploy directory (e.g. $JBOSS_HOME/server/default/deploy)
+  
+ * create a properites file that ends with -config.properties and put it in the deploy directory
+ 
+ (e.g. $JBOSS_HOME/server/default/deploy/test-config.properties)
+ <pre>
+ #sample properties file
+ testprop1=test1
+ testprop1=test2
+ </pre>
+ 
+ * You can verify that your properties deployed correctly using the JMX-Console
+   (http://localhost:8080/jmx-console/HtmlAdaptor?action=invokeOpByName&name=jboss.properties%3Aservice%3DPropertiesFileDeployer&methodName=displayAll) 

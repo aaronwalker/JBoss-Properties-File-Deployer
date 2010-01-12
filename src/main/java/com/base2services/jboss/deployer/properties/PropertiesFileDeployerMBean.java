@@ -38,50 +38,73 @@ import org.jboss.mx.util.ObjectNameFactory;
  * JMX MBean Interface
  * 
  * @author aaronwalker - a.walker@base2services.com
- *
  */
 public interface PropertiesFileDeployerMBean extends SubDeployerMBean
 {
-    //default object name
+    // default object name
     public static final ObjectName OBJECT_NAME = ObjectNameFactory.create("jboss.properties:PropertiesDeployer");
 
     /**
      * Returns true if this deployer can deploy the given DeploymentInfo.
+     * 
      * @return True if this deployer can deploy the given DeploymentInfo.
      */
-   boolean accepts(DeploymentInfo di);
+    boolean accepts(DeploymentInfo di);
 
     /**
      * Describe <code>init</code> method here.
-     * @param di a <code>DeploymentInfo</code> value
-     * @throws DeploymentException if an error occurs
+     * 
+     * @param di
+     *            a <code>DeploymentInfo</code> value
+     * @throws DeploymentException
+     *             if an error occurs
      */
-   void init(DeploymentInfo di) throws DeploymentException;
+    void init(DeploymentInfo di) throws DeploymentException;
 
     /**
      * Describe <code>create</code> method here.
-     * @param di a <code>DeploymentInfo</code> value
-     * @throws DeploymentException if an error occurs
+     * 
+     * @param di
+     *            a <code>DeploymentInfo</code> value
+     * @throws DeploymentException
+     *             if an error occurs
      */
-   void create(DeploymentInfo di) throws DeploymentException;
+    void create(DeploymentInfo di) throws DeploymentException;
 
     /**
      * The <code>start</code> method starts all the mbeans in this DeploymentInfo..
-     * @param di a <code>DeploymentInfo</code> value
-     * @throws DeploymentException if an error occurs
+     * 
+     * @param di
+     *            a <code>DeploymentInfo</code> value
+     * @throws DeploymentException
+     *             if an error occurs
      */
-   void start(DeploymentInfo di) throws DeploymentException;
+    void start(DeploymentInfo di) throws DeploymentException;
 
     /**
-     * Undeploys the package at the url string specified. This will: Undeploy packages depending on this one. Stop, destroy, and unregister all the specified mbeans Unload this package and packages this package deployed via the classpath tag. Keep track of packages depending on this one that we undeployed so that they can be redeployed should this one be redeployed.
-     * @param di the <code>DeploymentInfo</code> value to stop.
+     * Undeploys the package at the url string specified. This will: Undeploy packages depending on this one. Stop,
+     * destroy, and unregister all the specified mbeans Unload this package and packages this package deployed via the
+     * classpath tag. Keep track of packages depending on this one that we undeployed so that they can be redeployed
+     * should this one be redeployed.
+     * 
+     * @param di
+     *            the <code>DeploymentInfo</code> value to stop.
      */
-   void stop(DeploymentInfo di) ;
+    void stop(DeploymentInfo di);
 
     /**
      * Describe <code>destroy</code> method here.
-     * @param di a <code>DeploymentInfo</code> value
+     * 
+     * @param di
+     *            a <code>DeploymentInfo</code> value
      */
-   void destroy(DeploymentInfo di) ;
-    
+    void destroy(DeploymentInfo di);
+
+    /**
+     * Returnd an html formatted list of the current System Properties
+     * 
+     * @return html list of the current System Properties
+     */
+    String displayAll();
+
 }
