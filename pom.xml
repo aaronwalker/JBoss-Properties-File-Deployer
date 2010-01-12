@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.base2services.jboss.deployer</groupId>
+	<artifactId>properties-file-deployer</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jboss-sar</packaging>
+
+	<developers>
+		<developer>
+			<name>Aaron Walker</name>
+			<organization>base2Services</organization>
+			<organizationUrl>http://www.base2services.com</organizationUrl>
+			<email>a.walker@base2services.com</email>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>base2Services - BSD</name>
+			<url>http://www.base2services.com/opensource/license-bsd.html</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection></connection>
+	</scm>
+
+	<properties>
+		<jboss.version>4.2.3.GA</jboss.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-system</artifactId>
+			<version>${jboss.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-jmx</artifactId>
+			<version>${jboss.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-j2ee</artifactId>
+			<version>${jboss.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jbossall-client</artifactId>
+			<version>4.2.2.GA</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jboss-packaging-maven-plugin</artifactId>
+				<!-- Enable packaging types and lifecycle bindings. -->
+				<extensions>true</extensions>
+				<version>2.0-beta-1</version>
+			</plugin>
+		</plugins>
+		<finalName>${project.artifactId}</finalName>
+	</build>
+</project>
+

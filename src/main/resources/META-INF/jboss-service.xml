@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: jboss-service.xml $ -->
+
+<!-- ===================================================================== -->
+<!--  JBoss Server Configuration                                           -->
+<!-- ===================================================================== -->
+
+<server>
+
+   <mbean code="com.base2services.jboss.deployer.properties.PropertiesFileDeployer"
+      name="jboss.properties:service=PropertiesFileDeployer">
+   </mbean>
+
+</server>
+
