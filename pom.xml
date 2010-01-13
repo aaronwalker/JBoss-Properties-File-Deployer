@@ -23,7 +23,8 @@
 	</licenses>
 
 	<scm>
-		<connection></connection>
+		<connection>scm:git:git://github.com/aaronwalker/JBoss-Properties-File-Deployer.git</connection>
+		<url>http://github.com/aaronwalker/JBoss-Properties-File-Deployer</url>
 	</scm>
 
 	<properties>
@@ -57,10 +58,9 @@
 		</dependency>
 	</dependencies>
 
-
-
 	<build>
 		<plugins>
+
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -68,6 +68,7 @@
 					<target>1.5</target>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jboss-packaging-maven-plugin</artifactId>
@@ -75,6 +76,7 @@
 				<extensions>true</extensions>
 				<version>2.0-beta-1</version>
 			</plugin>
+
 		</plugins>
 		<finalName>${project.artifactId}</finalName>
 	</build>
