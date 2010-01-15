@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Created-By: ${java.version} - ${java.vendor}
+Specification-Title: ${project.name}
+Specification-Version: ${project.version}
+Specification-Vendor: ${organization.name}
+Implementation-Build: ${buildnumber}
