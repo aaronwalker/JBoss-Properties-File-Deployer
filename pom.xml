@@ -29,6 +29,7 @@
 
 	<scm>
 		<connection>scm:git:git://github.com/aaronwalker/JBoss-Properties-File-Deployer.git</connection>
+		<developerConnection>scm:git:git@github.com:aaronwalker/JBoss-Properties-File-Deployer.git</developerConnection>
 		<url>http://github.com/aaronwalker/JBoss-Properties-File-Deployer</url>
 	</scm>
 
