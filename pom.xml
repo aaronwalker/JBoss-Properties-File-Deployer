@@ -3,7 +3,7 @@
 	<groupId>com.base2services.jboss.deployer</groupId>
 	<artifactId>properties-file-deployer</artifactId>
 	<name>JBoss Properties File Deployer</name>
-	<version>1.2-SNAPSHOT</version>
+	<version>1.2</version>
 	<packaging>jboss-sar</packaging>
 
 	<organization>
